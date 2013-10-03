@@ -1,6 +1,7 @@
 require 'octokit'
 require 'date'
 require 'yaml'
+require_relative 'repository_filter'
 
 # Downloads repositories suitable for contribution according to parameters defined in
 # config file or method parameters.
@@ -8,6 +9,7 @@ class RepositoryDownloader
   def initialize
     @client = Octokit::Client.new :netrc => true
     @client.login
+    @filter = RepositoryFilter.new
 
     @config = begin
       YAML.load(File.open('config.yml'))
@@ -23,6 +25,6 @@ class RepositoryDownloader
     language:#{language} pushed:>#{min_push_date}
     eos
 
-    search_results.items
+    @filter.filter(search_results.items)
   end
 end

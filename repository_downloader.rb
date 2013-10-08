@@ -14,6 +14,7 @@ class RepositoryDownloader
     @config = begin
       YAML.load(File.open('config.yml'))
     end
+    @min_push_date = Date.today << @config['min_months']
 
     @filter = RepositoryFilter.new(@config,
                                    PullRequestSpecification.new(@client, @config))
@@ -21,15 +22,16 @@ class RepositoryDownloader
 
   # Download all suitable repos for the specified language.
   def download(language)
-    min_push_date = Date.today << @config['min_months']
     suitable_repos = []
 
-    search_results = @client.search_repos <<-eos
-    stars:>=#{@config['min_stars']} forks:>=#{@config['min_forks']}
-    language:#{language} pushed:>#{min_push_date}
-    eos
+    (1..@config['pages_to_search']).each do |current_page|
+      search_results = @client.search_repos "stars:>=#{@config['min_stars']} " +
+        "forks:>=#{@config['min_forks']} language:#{language} pushed:>#{@min_push_date}",
+        :page => current_page
 
-    suitable_repos += @filter.filter(search_results.items)
-    search_results.items
+      suitable_repos += @filter.filter(search_results.items)
+    end
+
+    suitable_repos
   end
 end

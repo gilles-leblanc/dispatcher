@@ -9,7 +9,7 @@ class PullRequestSpecification
 
   def is_satisfied_by(repo)
     @query_string = "#{repo.owner.login}/#{repo.name}"
-    has_recent_merged_pull_requests #&& !has_too_many_long_standing_pull_requests
+    has_recent_merged_pull_requests # && !has_too_many_long_standing_pull_requests
   end
 
   private

@@ -1,6 +1,6 @@
 min_stars: 5
-min_forks: 1
-min_months: 3
-max_months: 6
+min_forks: 2
+min_months: 2
+max_months: 5
 open_pull_requests_treshold: 10
 min_open_issues: 10

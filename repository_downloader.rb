@@ -8,7 +8,7 @@ require_relative 'pull_request_specification'
 # config file or method parameters.
 class RepositoryDownloader
   def initialize
-    @client = Octokit::Client.new :netrc => true
+    @client = Octokit::Client.new :netrc => true, :per_page => 100
     @client.login
 
     @config = begin
@@ -22,12 +22,14 @@ class RepositoryDownloader
   # Download all suitable repos for the specified language.
   def download(language)
     min_push_date = Date.today << @config['min_months']
+    suitable_repos = []
 
     search_results = @client.search_repos <<-eos
-    stars:>#{@config['min_stars']} forks:>#{@config['min_forks']}
+    stars:>=#{@config['min_stars']} forks:>=#{@config['min_forks']}
     language:#{language} pushed:>#{min_push_date}
     eos
 
-    @filter.filter(search_results.items)
+    suitable_repos += @filter.filter(search_results.items)
+    search_results.items
   end
 end

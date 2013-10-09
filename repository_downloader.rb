@@ -2,6 +2,7 @@ require 'octokit'
 require 'date'
 require 'yaml'
 require_relative 'repository_filter'
+require_relative 'open_issues_specification'
 require_relative 'pull_request_specification'
 
 # Downloads repositories suitable for contribution according to parameters defined in
@@ -12,11 +13,11 @@ class RepositoryDownloader
     @client.login
 
     @config = begin
-      YAML.load(File.open('config.yml'))
-    end
+                YAML.load(File.open('config.yml'))
+              end
     @min_push_date = Date.today << @config['min_months']
 
-    @filter = RepositoryFilter.new(@config,
+    @filter = RepositoryFilter.new(@config, OpenIssuesSpecification.new(@config),
                                    PullRequestSpecification.new(@client, @config))
   end
 
@@ -26,8 +27,9 @@ class RepositoryDownloader
 
     (1..@config['pages_to_search']).each do |current_page|
       search_results = @client.search_repos "stars:>=#{@config['min_stars']} " +
-        "forks:>=#{@config['min_forks']} language:#{language} pushed:>#{@min_push_date}",
-        :page => current_page
+      "forks:#{@config['min_forks']}..#{@config['max_forks']} " +
+      "language:#{language} pushed:>#{@min_push_date}",
+      :page => current_page
 
       suitable_repos += @filter.filter(search_results.items)
     end

@@ -1,4 +1,4 @@
-# This class is used to tell if a repository is valid in regards to it's pull requests.
+# This class is used to tell if a repository is suitable in regards to it's pull requests.
 # The pull requests are evaluated and if they conform to the specification,
 # the repository will pass the specification.
 class PullRequestSpecification
@@ -9,7 +9,7 @@ class PullRequestSpecification
 
   def is_satisfied_by(repo)
     @query_string = "#{repo.owner.login}/#{repo.name}"
-    has_recent_merged_pull_requests # && !has_too_many_long_standing_pull_requests
+    has_recent_merged_pull_requests && !has_too_many_long_standing_pull_requests
   end
 
   private
@@ -32,6 +32,6 @@ class PullRequestSpecification
         pull_request['comments'] == 0
     end
 
-    count < @config['open_pull_requests_treshold']
+    count > @config['open_pull_requests_treshold']
   end
 end

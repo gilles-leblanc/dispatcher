@@ -8,3 +8,7 @@ Dispatcher uses the GitHub API to search repos and present those which seem like
 These results can be accessed through a GitHub Page.
 
 Dispatcher looks at several factors all of which are configurable. The goal of the standard configuration is to find active repos with open issues that have accepted pull requests in the past and that do not have too many uncommented open pull requests.
+
+## Project Page
+
+http://gilles-leblanc.github.io/dispatcher/

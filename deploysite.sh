@@ -11,7 +11,13 @@ if [ -d  "$TEMP_CP_DIR" ]; then
 fi
 
 mkdir $TEMP_CP_DIR
-cp -r /site/* $TEMP_CP_DIR
+cp -r site/* $TEMP_CP_DIR
 
 git checkout gh-pages
 cp -rf $TEMP_CP_DIR .
+
+git add .
+git commit
+git push origin gh-pages
+
+echo Done Deploying

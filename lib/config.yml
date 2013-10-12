@@ -7,4 +7,4 @@ open_pull_requests_treshold: 10
 min_open_issues: 10
 max_open_issues: 350
 max_open_pull_requests: 100
-pages_to_search: 5
+pages_to_search: 1

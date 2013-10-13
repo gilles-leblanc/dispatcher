@@ -17,7 +17,7 @@ git checkout gh-pages
 cp -rf $TEMP_CP_DIR/* .
 
 git add .
-git commit
+git commit -m 'Automatic GitHub page update'
 git push origin gh-pages
 git checkout master
 

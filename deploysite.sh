@@ -13,9 +13,11 @@ fi
 mkdir $TEMP_CP_DIR
 cp -r site/* $TEMP_CP_DIR
 
+# Switch git branch to branch containing web-page
 git checkout gh-pages
 cp -rf $TEMP_CP_DIR/* .
 
+# Commit and push new web-page to server (resulting in deployment)
 git add .
 git commit -m 'Automatic GitHub page update'
 git push origin gh-pages

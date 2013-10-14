@@ -2,6 +2,7 @@ require 'octokit'
 require 'date'
 require 'yaml'
 require_relative 'repository_filter'
+require_relative 'contributors_specification'
 require_relative 'open_issues_specification'
 require_relative 'pull_request_specification'
 
@@ -18,7 +19,8 @@ class RepositoryDownloader
     @min_push_date = Date.today << @config['min_months']
 
     @filter = RepositoryFilter.new(@config, OpenIssuesSpecification.new(@config),
-                                   PullRequestSpecification.new(@client, @config))
+                                   PullRequestSpecification.new(@client, @config),
+                                   ContributorsSpecification.new(@client, @config))
   end
 
   # Download all suitable repos for the specified language.

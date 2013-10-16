@@ -1,8 +1,14 @@
 # Deploy the generated site to GitHub
+auto_commit_message = 'Automatic GitHub page update'
 
 # Commit current modifications
 git add .
-git commit
+# Check for -a, automatic command line option
+if [ $1 = -a ]; then
+  git commit -m "$auto_commit_message"
+else
+  git commit
+fi
 
 # Create a temp dir to copy the files while we switch branches
 TEMP_CP_DIR="../dispatcher_site_temp"
@@ -19,7 +25,7 @@ cp -rf $TEMP_CP_DIR/* .
 
 # Commit and push new web-page to server (resulting in deployment)
 git add .
-git commit -m 'Automatic GitHub page update'
+git commit -m "Automatic GitHub page update"
 git push origin gh-pages
 git checkout master
 

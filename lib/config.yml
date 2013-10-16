@@ -9,4 +9,4 @@ max_open_issues: 200
 max_open_pull_requests: 60
 min_contributors: 5
 max_contributors: 125
-pages_to_search: 1
+pages_to_search: 5

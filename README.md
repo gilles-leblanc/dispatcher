@@ -12,3 +12,7 @@ Dispatcher looks at several factors all of which are configurable. The goal of t
 ## Project Page
 
 http://gilles-leblanc.github.io/dispatcher/
+
+## Contributing
+
+Please feel free to submit issues, pull request or comments (my email adress is on my GitHub profile).

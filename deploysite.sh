@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Deploy the generated site to GitHub
 
 # Commit current modifications

@@ -6,6 +6,7 @@
 
 function generate_language_page
 {
+  echo Generating page for $1
   ruby gen_repos.rb $1 > ../site/_includes/$1_repos.html
 }
 
@@ -25,6 +26,7 @@ fi
 cd ../site
 
 # Do a jekyll build to be able to preview the site locally
+echo Building site
 jekyll build
 cd ..
 

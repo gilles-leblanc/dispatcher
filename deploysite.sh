@@ -2,6 +2,8 @@
 
 # Deploy the generated site to GitHub
 
+echo Start deploying
+
 # Commit current modifications
 git add .
 # Check for -a, automatic command line option

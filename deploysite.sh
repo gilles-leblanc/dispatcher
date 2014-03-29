@@ -5,6 +5,7 @@
 echo Start deploying
 
 # Commit current modifications
+git checkout master
 git add .
 # Check for -a, automatic command line option
 if [ $1 = -a ]; then
@@ -29,7 +30,7 @@ cp -rf $TEMP_CP_DIR/* .
 # Commit and push new web-page to server (resulting in deployment)
 git add .
 git commit -m 'Automatic GitHub page update'
-git push origin gh-pages
+git push --force origin gh-pages
 git checkout master
 
 echo Done Deploying

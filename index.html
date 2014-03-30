@@ -1,30 +1,116 @@
 ---
 layout: default
 title: dispatcher
+homeactive: class="pure-menu-selected"
 ---
 
-<div id="content-wrapper">
-  <div class="inner clearfix">
-    <section id="main-content">
-    <h3>
-      <a name="welcome-to-dispatcher" class="anchor" href="#welcome-to-dispatcher"><span class="octicon octicon-link"></span></a>Find GitHub projects to contribute to...</h3>
-
-    <p>Dispatcher uses the GitHub API to search repos and find those which seem like a good fit to begin contributing to. While dispatcher can't guarantee results, it will help shorten the time it takes to find these repos.</p>
-    <p>It is aimed primarly at people getting started into the world of open source contribution.</p>
-    <p>Some other existing sites require project owners to signify they are looking for help and can rapidly fall out of date. Others are automated but simply lists active projects with tons of issues but that may not be conductive to people starting out contributing.</p>
-
-    <h3>
-      <a name="what-does-it-do" class="anchor" href="#what-does-it-do"><span class="octicon octicon-link"></span></a>What does it do?</h3>
-
-    <p>Dispatcher searches GitHub repos and find those with open issues, that have recently been active, that have recently accepted pull requests and that do not have too many uncommented standing pull requests. Dispatcher will also tend to look for mid-sized repos. While other repos are also good for contribution, the repos selected by dispatcher are currently accepting pull requests and have open issues that need to be adressed.</p>
-    <p>As we go forward, dispatcher will improve it's results.</p>
-
-    <h3>
-      <a name="help-us" class="anchor" href="#help-us"><span class="octicon octicon-link"></span></a>Help us</h3>
-
-    <p>If you came here looking to contribute to a project, consider contributing to dispatcher. Feel free to fork and submit pull requests and submit issues and suggestions on how dispatcher's current results could be improved.</p>
-    </section>
-
-    {% include aside_menu.html %}
+<div class="splash-container">
+  <div class="splash">
+    <h1 class="splash-head">dispatcher</h1>
+    <p class="splash-subhead">
+    Find potential GitHub projects to contribute to.
+    </p>
+    <p>
+    <a href="{{ site.baseurl }}/ruby/" class="pure-button pure-button-primary">Ruby</a>
+    <a href="{{ site.baseurl }}/python/" class="pure-button pure-button-primary">Python</a>
+    <a href="{{ site.baseurl }}/javascript/" class="pure-button pure-button-primary">JavaScript</a>
+    <a href="{{ site.baseurl }}/java/" class="pure-button pure-button-primary">Java</a>
+    </p>
   </div>
 </div>
+
+<div class="content-wrapper">
+  <div class="content">
+    <h2 class="content-head is-center">The gist</h2>
+
+    <div class="pure-g">
+      <div class="l-box pure-u-1 pure-u-med-1-2 pure-u-lrg-1-3">
+
+        <h3 class="content-subhead">
+          <i class="fa fa-rocket"></i>
+          Find Projects Quickly
+        </h3>
+        <p>
+        Dispatcher uses the GitHub API to search for repos which seem like a good fit to begin contributing to.
+        </p>
+      </div>
+      <div class="l-box pure-u-1 pure-u-med-1-2 pure-u-lrg-1-3">
+        <h3 class="content-subhead">
+          <i class="fa fa-gears"></i>
+          What Does It Do?
+        </h3>
+        <p>
+        It looks for recently active repos with open issues and a history of accepting pull requests from outside contributors.
+        </p>
+      </div>
+      <div class="l-box pure-u-1 pure-u-med-1-2 pure-u-lrg-1-3">
+        <h3 class="content-subhead">
+          <i class="fa fa-group"></i>
+          Who Is It For?
+        </h3>
+        <p>
+        Dispatcher is primarly aimed at people looking to get into open source.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ribbon l-box-lrg pure-g">
+    <div class="l-box-lrg is-center pure-u-1 pure-u-med-1-2 pure-u-lrg-2-5">
+      <a href="https://github.com/gilles-leblanc/dispatcher"><img class="pure-img-responsive" src="images/Octocat-small.png"></a>
+    </div>
+    <div class="pure-u-1 pure-u-med-1-2 pure-u-lrg-3-5">
+
+      <h2 class="content-head content-head-ribbon">Fork us on GitHub</h2>
+
+      <p>
+      The project is of course hosted on GitHub.<br/>
+      Click on the cat, drop by, have a look around.<br/>
+      While you're at it, why not fork us and contribute.<br/>
+      </p>
+    </div>
+  </div>
+
+  <div class="banner">
+  </div>
+
+  <div class="content information pure-g">
+    <h2 class="content-head is-center">The long version</h2>
+
+    <div class="pure-u-1 pure-u-med-1-2">
+      <h4 class="information-head">Always fresh</h4>
+      <p>
+      Dispatcher will help shorten the time needed to find good repos.
+      Rather than require the repo owners to subscribe to a service we seek out those projects. This means the results are always fresh and relevant.
+      </p>
+
+      <h4 class="information-head">Too much is like not enough</h4>
+      <p>
+      The list of repos is limited, this way you won't be overwhelmed by choices. The list itself is a randomized subset of valid repos.
+      The site is updated regularly and when it does, the list is udated.
+      </p>
+
+      <h4 class="information-head">Too long did read</h4>
+      <p>
+      Dispatcher searches GitHub repos and find those with open issues, that have recently been active, that have recently accepted pull requests and that do not have too many uncommented standing pull requests. 
+      </p>
+      <p>
+      Dispatcher will also tend to look for mid-sized repos. While other repos are also good for contribution, the repos selected by dispatcher are currently accepting pull requests and have open issues that need to be adressed.
+      </p>
+      <p>
+      As we go forward, dispatcher will improve it's results.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="http://yui.yahooapis.com/3.14.1/build/yui/yui.js"></script>
+<script>
+  YUI().use('node-base', 'node-event-delegate', function (Y) {
+    // This just makes sure that the href="#" attached to the <a> elements
+      // don't scroll you back up the page.
+      Y.one('body').delegate('click', function (e) {
+        e.preventDefault();
+      }, 'a[href="#"]');
+    });
+  </script>

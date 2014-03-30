@@ -1,7 +1,15 @@
 <header>
-<div class="inner">
-  <h1>dispatcher</h1>
-  <h2>Find potential GitHub projects to contribute to. </h2>
-  <a href="https://github.com/gilles-leblanc/dispatcher" class="button"><small>View project on</small>GitHub</a>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">dispatcher</a>
+
+        <ul>
+          <li {{ page.homeactive }}><a href="{{ site.baseurl }}/">Home</a></li>
+          <li {{ page.rubyactive }}><a href="{{ site.baseurl }}/ruby/">Ruby</a></li>
+          <li {{ page.pythonactive }}><a href="{{ site.baseurl }}/python/">Python</a></li>
+          <li {{ page.javascriptactive }}><a href="{{ site.baseurl }}/javascript/">JavaScript</a></li>
+          <li {{ page.javaactive }}><a href="{{ site.baseurl }}/java/">Java</a></li>
+        </ul>
+    </div>
 </div>
 </header>

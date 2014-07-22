@@ -1,3 +1,4 @@
 *.pwd
 site/_site/
 _site/
+*.swp

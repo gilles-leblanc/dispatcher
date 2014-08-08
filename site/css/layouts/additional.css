@@ -5,3 +5,7 @@ p.pure-button {
 .content li {
   color: rgba(37, 89, 95, 1);
 }
+
+.no-click-button {
+  cursor: normal;
+}

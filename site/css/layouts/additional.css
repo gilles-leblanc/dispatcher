@@ -7,5 +7,5 @@ p.pure-button {
 }
 
 .no-click-button {
-  cursor: normal;
+  cursor: default;
 }

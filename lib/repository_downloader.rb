@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'octokit'
 require 'date'
 require 'yaml'

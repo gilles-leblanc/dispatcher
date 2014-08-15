@@ -2,7 +2,15 @@
 
 # Deploy the generated site to GitHub
 
-echo Start deploying
+if [ -s site/_includes/java_repos.html ] &&
+  [ -s site/_includes/javascript_repos.html ] &&
+  [ -s site/_includes/ruby_repos.html ] &&
+  [ -s site/_include/python_repos.html ]
+then
+  echo Start deploying
+else
+  exit 1
+fi
 
 # Commit current modifications
 git checkout master

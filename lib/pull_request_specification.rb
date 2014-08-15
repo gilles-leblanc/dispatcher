@@ -16,7 +16,7 @@ class PullRequestSpecification
 
   # check for merged pull request since min months
   def has_recent_merged_pull_requests
-    pull_requests = @client.pull_requests(@query_string, :closed)
+    pull_requests = @client.pull_requests(@query_string, :state => 'closed')
     pull_requests.any? do |pull_request|
       merged_at = pull_request['merged_at']
       merged_at && merged_at > (Date.today << @config['min_months']).to_time
@@ -26,7 +26,7 @@ class PullRequestSpecification
   # check for open uncommented pull request open longer than max months and with
   # number over long standing pull requests treshold
   def has_too_many_long_standing_pull_requests
-    pull_requests = @client.pull_requests(@query_string, :open)
+    pull_requests = @client.pull_requests(@query_string, :state => 'open')
     count = pull_requests.count do |pull_request|
       pull_request['created_at'] < (Date.today << @config['max_months']).to_time &&
         pull_request['comments'] == 0

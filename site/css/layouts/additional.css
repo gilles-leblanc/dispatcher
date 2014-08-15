@@ -1,9 +1,15 @@
 p.pure-button {
+  margin-top: 2em;
   font-size: 120%;
 }
 
 .content li {
   color: rgba(37, 89, 95, 1);
+}
+
+.content ul {
+  margin-left: 1.5em;
+  margin-right: 2em;
 }
 
 .no-click-button {

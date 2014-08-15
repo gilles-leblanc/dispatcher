@@ -5,10 +5,11 @@
 if [ -s site/_includes/java_repos.html ] &&
   [ -s site/_includes/javascript_repos.html ] &&
   [ -s site/_includes/ruby_repos.html ] &&
-  [ -s site/_include/python_repos.html ]
+  [ -s site/_includes/python_repos.html ]
 then
-  echo Start deploying
+  echo "Start deploying"
 else
+  echo "Error: missing language pages"
   exit 1
 fi
 

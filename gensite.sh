@@ -20,7 +20,7 @@ else
   generate_language_page ruby
   generate_language_page python
   generate_language_page javascript
-  generate_language_page java
+  generate_language_page php
 fi
 
 cd ../site

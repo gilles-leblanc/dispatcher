@@ -2,7 +2,7 @@
 
 # Deploy the generated site to GitHub
 
-if [ -s site/_includes/java_repos.html ] &&
+if [ -s site/_includes/php_repos.html ] &&
   [ -s site/_includes/javascript_repos.html ] &&
   [ -s site/_includes/ruby_repos.html ] &&
   [ -s site/_includes/python_repos.html ]

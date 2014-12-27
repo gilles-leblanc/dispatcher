@@ -16,3 +16,9 @@ http://gilles-leblanc.github.io/dispatcher/
 ## Contributing
 
 Please feel free to submit issues, pull request or comments (my email adress is on my GitHub profile).
+
+## Generating pages
+
+To generate a new set of pages use ```gensite.sh``` and ```deploysite.sh``` to deploy them to GitHub. ```build_and_deploy.sh``` does both. On first getting the repository, you will have to do a ```bundle install``` in the /lib folder.
+
+The scripts are configured to deploy to the master repository and will need to be modified to deploy to a fork. They are also configured to use a .netrc file for GitHub configuration.

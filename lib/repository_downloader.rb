@@ -28,7 +28,6 @@ class RepositoryDownloader
 
   # Download all suitable repos for the specified language.
   def download(language)
-    puts "*************"
     suitable_repos = []
 
     (1..@config['pages_to_search']).each do |current_page|

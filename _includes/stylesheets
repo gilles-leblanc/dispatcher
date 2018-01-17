@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.4.2/pure.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
 <link rel="stylesheet" href="{{ page.path_prefix }}css/main-grid.css">
 <link rel="stylesheet" href="{{ page.path_prefix }}css/layouts/main.css">
 <link rel="stylesheet" href="{{ page.path_prefix }}css/layouts/additional.css">

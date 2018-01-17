@@ -1,3 +1,5 @@
+This project and it's web site is no longer being maintained.
+
 dispatcher
 ==========
 
@@ -11,7 +13,7 @@ Dispatcher looks at several factors all of which are configurable. The goal of t
 
 ## Project Page
 
-http://gilles-leblanc.github.io/dispatcher/
+<the site is now deprecated>
 
 ## Contributing
 
